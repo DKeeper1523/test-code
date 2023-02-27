@@ -28,16 +28,16 @@ TODO
 =======================  =======  =========  ===============  ==========
 Attribute                FairPy   Fairlearn  AI Fairness 360  inFairness
 =======================  =======  =========  ===============  ==========
-Group Fairness           \checkmark  \checkmark    \checkmark          -
-Individual Fairness      \checkmark  - \checkmark          \checkmark
-Minimax Fairness         \checkmark  - -       -
-Tabular Data             \checkmark  \checkmark    \checkmark          \checkmark
-Graph Data               \checkmark  - -       -
-Classification           \checkmark  \checkmark    \checkmark          \checkmark
-Regression               \checkmark  - \checkmark          -
-Ranking                  \checkmark  - -       -
+Group Fairness           [x]      [x]        [x]              [ ]       
+Individual Fairness      [x]      [ ]        [x]              [x]    
+Minimax Fairness         [x]      [ ]        [ ]              [ ]       
+Tabular Data             [x]      [x]        [x]              [x]    
+Graph Data               [x]      [ ]        [ ]              [ ]       
+Classification           [x]      [x]        [x]              [x]    
+Regression               [x]      [ ]        [x]              [ ]       
+Ranking                  [x]      [ ]        [ ]              [ ]       
 Number of Algorithms     10+      4          14               3
-Compatible with sklearn  \checkmark  \checkmark    Partially        -
+Compatible with sklearn  [x]      [x]        Partially        [ ]       
 Latest release           ?        July 2021  March 2021       June 2022
 =======================  =======  =========  ===============  ==========
 
