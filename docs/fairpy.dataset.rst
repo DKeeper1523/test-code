@@ -1,39 +1,13 @@
-Datasets
-==========
+fairpy.dataset
+======================
 
-Dataset
------
+.. currentmodule:: fairpy.dataset
 
-.. autoclass:: fairpy.dataset.Dataset
+.. autosummary::
+   :nosignatures:
+   {% for cls in fairpy.dataset.classes %}
+     {{ cls }}
+   {% endfor %}
+
+.. automodule:: fairpy.dataset
     :members:
-    :exclude-members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members:
-
-TabDataset
------
-
-.. autoclass:: fairpy.dataset.TabDataset
-    :members:
-    :exclude-members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members:
-
-Adone
------
-
-.. autoclass:: fairpy.dataset.AdONE
-    :members:
-    :exclude-members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members:
-
-
-Reference
----------
-
-.. bibliography::
-   :cited:

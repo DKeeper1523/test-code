@@ -1,18 +1,13 @@
-Models
+fairpy.model
 ==========
 
-FairRank
------
+.. currentmodule:: fairpy.model
 
-.. autoclass:: fairpy.model.FairRank
+.. autosummary::
+   :nosignatures:
+   {% for cls in fairpy.model.classes %}
+     {{ cls }}
+   {% endfor %}
+
+.. automodule:: fairpy.model
     :members:
-    :exclude-members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members:
-
-Reference
----------
-
-.. bibliography::
-   :cited:
