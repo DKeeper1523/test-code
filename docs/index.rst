@@ -23,6 +23,8 @@ For consistency and accessibility, FairPy is developed on top of `scikit-learn <
 Why FairPy: Compare to Other Libraries
 ====================
 
+TODO
+
 =======================  =======  =========  ===============  ==========
 Attribute                FairPy   Fairlearn  AI Fairness 360  inFairness
 =======================  =======  =========  ===============  ==========
