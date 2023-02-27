@@ -42,9 +42,7 @@ epub_show_urls = 'footnote'
 
 
 # The master toctree document.
-master_doc = 'index'
 bibtex_bibfiles = ['ref.bib']
-source_suffix = '.rst'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
