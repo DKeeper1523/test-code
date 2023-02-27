@@ -22,7 +22,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
     'sphinx.ext.napoleon',
-    'sphinx_gallery.gen_gallery'
 ]
 
 intersphinx_mapping = {
