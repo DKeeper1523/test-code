@@ -24,11 +24,9 @@ Why FairPy: Compare to Other Libraries
 ====================
 
 .. |check| raw:: html
-
     <input checked=""  type="checkbox">
-
+    
 .. |uncheck_| raw:: html
-
     <input disabled="" type="checkbox">
 
 =======================  =======  =========  ===============  ==========
@@ -140,21 +138,22 @@ Ranking         dcg
 ----
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: Getting Started
 
    install
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: API References
 
-   fairpy
+   fairpy.model
+   fairpy.dataset
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
    :caption: Additional Information
 
