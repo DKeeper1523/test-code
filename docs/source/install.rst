@@ -21,17 +21,7 @@ Alternatively, you could clone and run setup.py file:
 
 **Required Dependencies**\ :
 
-
-gdown~=4.5.1
-pandas~=1.4.3
-numpy~=1.21.5
-scikit-learn~=1.2.0
-xlrd~=2.0.1
-cvxopt~=1.3.0
-networkx~=2.8.7
-torch~=1.12.0
-
-* Python 3.7+
+* python>=3.7.0
 * numpy>=1.21.5
 * pandas>=1.4.3
 * scikit-learn>=1.2.0

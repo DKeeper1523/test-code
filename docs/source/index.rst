@@ -3,13 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
 .. figure:: fairpy_logo.png
     :scale: 30%
     :alt: logo
 
 ----
 
+FairPy Documentation
+====================
 
 FairPy is a comprehensive **Python Library** for **Machine Learning Fairness**, covering various fairness notions, data structures, and learning tasks.
 TODO: This challenging field has many key Applications....
@@ -17,25 +18,36 @@ TODO: This challenging field has many key Applications....
 FairPy includes more than **10** latest fairness algorithms, such as InflFair (ICML'22) and FairGLM (ICML'21).
 For consistency and accessibility, FairPy is developed on top of `scikit-learn <https://scikit-learn.org/>`_ and `PyTorch <https://pytorch.org/>`_.
 
+----
 
 **Why FairPy: Compare to other libraries**:
 
-| Attribute               | FairPy  | Fairlearn | AI Fairness 360 | inFairness |
-|:------------------------|:-------:|:---------:|:---------------:|:----------:|
-| Group Fairness          | &check; |  &check;  |     &check;     |  &cross;   |
-| Individual Fairness     | &check; |  &cross;  |     &check;     |  &check;   |
-| Minimax Fairness        | &check; |  &cross;  |     &cross;     |  &cross;   |
-| Tabular Data            | &check; |  &check;  |     &check;     |  &check;   |
-| Graph Data              | &check; |  &cross;  |     &cross;     |  &cross;   |
-| Classification          | &check; |  &check;  |     &check;     |  &check;   |
-| Regression              | &check; |  &cross;  |     &check;     |  &cross;   |
-| Ranking                 | &check; |  &cross;  |     &cross;     |  &cross;   |
-| Number of Algorithms    |   15+   |     4     |       14        |     3      |
-| Compatible with sklearn | &check; |  &check;  |    Partially    |  &cross;   |
-| Latest release          |    ?    | July 2021 |    March 2021   |  June 2022 |
+.. |check| raw:: html
+
+    <input checked=""  type="checkbox">
+
+.. |uncheck_| raw:: html
+
+    <input disabled="" type="checkbox">
+
+========================  ========  ==========  ================  ============
+Attribute                 FairPy    Fairlearn   AI Fairness 360   inFairness
+========================  ========  ==========  ================  ============
+Group Fairness            |check|   |check|     |check|           |uncheck_|
+Individual Fairness       |check|   |uncheck_|  |check|           |check|
+Minimax Fairness          |check|   |uncheck_|  |uncheck_|        |uncheck_|
+Tabular Data              |check|   |check|     |check|           |check|
+Graph Data                |check|   |uncheck_|  |uncheck_|        |uncheck_|
+Classification            |check|   |check|     |check|           |check|
+Regression                |check|   |uncheck_|  |check|           |uncheck_|
+Ranking                   |check|   |uncheck_|  |uncheck_|        |uncheck_|
+Number of Algorithms      15+       4           14                3
+Compatible with sklearn   |check|   |check|     Partially         |uncheck_|
+Latest release            ?         July 2021   March 2021        June 2022
+========================  ========  ==========  ================  ============
 
 
-**Outlier Detection Using PyGOD with 5 Lines of Code**\ :
+**Sample Code of FairPy**\ :
 
 
 .. code-block:: python
@@ -50,31 +62,34 @@ For consistency and accessibility, FairPy is developed on top of `scikit-learn <
     model.fit(X, y, s)      # Fit model with provided data
     pred = model.predict(X) # Predict
 
+---
+
+FairPy toolkit consists of three major functional groups:
+
+**(i) Fairness Algorithms** :
+
+====  ===============  ==============  ====  ====
+Type  Name in FairPy   Task            Year  Ref
+====  ===============  ==============  ====  ====
+Pre   reweigh          Any             2021  [1]
+Pre   LabelBias        Classification  2021  [2]
+Pre   LinearFairERM    Any             2021  [3]
+Pre   DIRemover        Any             2021  [4]
+Pre   IFair            Any             2021  [10]
+Pre   InflFair         Classification  2021  [9]
+In    FairCstr         Classification  2021  [5]
+In    FairGLM          Classification  2021  [7]
+In    FairPGRank       Ranking         2021  [12]
+Post  EqOddsCalib      Classification  2021  [6]
+Post  FairRank         Ranking         2021  [11]
+====  ===============  ==============  ====  ====
+
+**(iii) Datasets** :
+
+TODO
 
 
-Implemented Algorithms
-======================
-
-PyGOD toolkit consists of two major functional groups:
-
-**(i) Node-level detection** :
-
-| Type | Name in FairPy | Task           | Year | Ref. |
-|:----:|:--------------:|:--------------:|:----:|:----:|
-| Pre  | reweigh        | Any            | 2012 | [1]  |
-| Pre  | LabelBias      | Classification | 2019 | [2]  |
-| Pre  | LinearFairERM  | Any            | 2018 | [3]  |
-| Pre  | DIRemover      | Any            | 2015 | [4]  |
-| Pre  | IFair          | Any            | 2019 | [10] |
-| Pre  | InflFair       | Classification | 2022 | [9]  |
-| In   | FairCstr       | Classification | 2017 | [5]  |
-| In   | FairGLM        | Classification | 2022 | [7]  |
-| In   | FairPGRank     | Ranking        | 2019 | [12] |
-| Post | EqOddsCalib    | Classification | 2016 | [6]  |
-| Post | FairRank       | Ranking        | 2018 | [11] |
-
-
-**(ii) Utility functions** :
+**(iii) Utility functions** :
 
 TODO
 
@@ -84,18 +99,18 @@ TODO
 
 **Reference**:
 
-[1] Data preprocessing techniques for classification without discrimination  
-[2] Identifying and Correcting Label Bias in Machine Learning  
-[3] Empirical risk minimization under fairness constraints  
-[4] Certifying and Removing Disparate Impact  
-[5] Fairness Constraints: Mechanisms for Fair Classification  
-[6] Equality of opportunity in supervised learning  
-[7] Fair Generalized Linear Models with a Convex Penalty  
-[8] The Fairness of Risk Scores Beyond Classification: Bipartite Ranking and the xAUC Metric  
-[9] Achieving Fairness at No Utility Cost via Data Reweighing with Influence  
-[10] iFair: Learning Individually Fair Data Representations for Algorithmic Decision Making  
-[11] FA*IR: A Fair Top-k Ranking Algorithm  
-[12] Policy Learning for Fairness in Ranking  
+* [1] Data preprocessing techniques for classification without discrimination  
+* [2] Identifying and Correcting Label Bias in Machine Learning  
+* [3] Empirical risk minimization under fairness constraints  
+* [4] Certifying and Removing Disparate Impact  
+* [5] Fairness Constraints: Mechanisms for Fair Classification  
+* [6] Equality of opportunity in supervised learning  
+* [7] Fair Generalized Linear Models with a Convex Penalty  
+* [8] The Fairness of Risk Scores Beyond Classification: Bipartite Ranking and the xAUC Metric  
+* [9] Achieving Fairness at No Utility Cost via Data Reweighing with Influence  
+* [10] iFair: Learning Individually Fair Data Representations for Algorithmic Decision Making  
+* [11] FA*IR: A Fair Top-k Ranking Algorithm  
+* [12] Policy Learning for Fairness in Ranking  
 
 ----
 
@@ -105,7 +120,6 @@ TODO
    :caption: Getting Started
 
    install
-   tutorials/index
 
 .. toctree::
    :maxdepth: 2
