@@ -17,11 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
-    'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
-    'sphinx.ext.napoleon',
 ]
 
 intersphinx_mapping = {
@@ -43,10 +39,10 @@ epub_show_urls = 'footnote'
 # The master toctree document.
 bibtex_bibfiles = ['ref.bib']
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+# # List of patterns, relative to source directory, that match files and
+# # directories to ignore when looking for source files.
+# # This pattern also affects html_static_path and html_extra_path.
+# exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_favicon = 'fairpy_ico.png'
 
