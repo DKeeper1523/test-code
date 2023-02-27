@@ -21,10 +21,10 @@ TabDataset
     :show-inheritance:
     :inherited-members:
 
-TabDataset
+Adone
 -----
 
-.. autoclass:: fairpy.dataset.TabDataset
+.. autoclass:: fairpy.dataset.AdONE
     :members:
     :exclude-members:
     :undoc-members:
