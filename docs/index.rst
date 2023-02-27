@@ -23,25 +23,19 @@ For consistency and accessibility, FairPy is developed on top of `scikit-learn <
 Why FairPy: Compare to Other Libraries
 ====================
 
-.. |check| raw:: html
-    <input checked=""  type="checkbox">
-    
-.. |uncheck_| raw:: html
-    <input disabled="" type="checkbox">
-
 =======================  =======  =========  ===============  ==========
 Attribute                FairPy   Fairlearn  AI Fairness 360  inFairness
 =======================  =======  =========  ===============  ==========
-Group Fairness           |check|  |check|    |check|          |uncheck_|
-Individual Fairness      |check|  |uncheck_| |check|          |check|
-Minimax Fairness         |check|  |uncheck_| |uncheck_|       |uncheck_|
-Tabular Data             |check|  |check|    |check|          |check|
-Graph Data               |check|  |uncheck_| |uncheck_|       |uncheck_|
-Classification           |check|  |check|    |check|          |check|
-Regression               |check|  |uncheck_| |check|          |uncheck_|
-Ranking                  |check|  |uncheck_| |uncheck_|       |uncheck_|
+Group Fairness           \checkmark  \checkmark    \checkmark          -
+Individual Fairness      \checkmark  - \checkmark          \checkmark
+Minimax Fairness         \checkmark  - -       -
+Tabular Data             \checkmark  \checkmark    \checkmark          \checkmark
+Graph Data               \checkmark  - -       -
+Classification           \checkmark  \checkmark    \checkmark          \checkmark
+Regression               \checkmark  - \checkmark          -
+Ranking                  \checkmark  - -       -
 Number of Algorithms     10+      4          14               3
-Compatible with sklearn  |check|  |check|    Partially        |uncheck_|
+Compatible with sklearn  \checkmark  \checkmark    Partially        -
 Latest release           ?        July 2021  March 2021       June 2022
 =======================  =======  =========  ===============  ==========
 
@@ -151,10 +145,3 @@ Ranking         dcg
 
    fairpy.model
    fairpy.dataset
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Additional Information
-
-   team
