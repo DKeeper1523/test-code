@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 .. figure:: fairpy_logo.png
-    :scale: 30%
+    :scale: 50%
     :alt: logo
 
 ----
@@ -20,7 +20,8 @@ For consistency and accessibility, FairPy is developed on top of `scikit-learn <
 
 ----
 
-**Why FairPy: Compare to other libraries**:
+Why FairPy: Compare to other libraries
+====================
 
 .. |check| raw:: html
 
@@ -30,24 +31,25 @@ For consistency and accessibility, FairPy is developed on top of `scikit-learn <
 
     <input disabled="" type="checkbox">
 
-========================  ========  ==========  ================  ============
-Attribute                 FairPy    Fairlearn   AI Fairness 360   inFairness
-========================  ========  ==========  ================  ============
-Group Fairness            |check|   |check|     |check|           |uncheck_|
-Individual Fairness       |check|   |uncheck_|  |check|           |check|
-Minimax Fairness          |check|   |uncheck_|  |uncheck_|        |uncheck_|
-Tabular Data              |check|   |check|     |check|           |check|
-Graph Data                |check|   |uncheck_|  |uncheck_|        |uncheck_|
-Classification            |check|   |check|     |check|           |check|
-Regression                |check|   |uncheck_|  |check|           |uncheck_|
-Ranking                   |check|   |uncheck_|  |uncheck_|        |uncheck_|
-Number of Algorithms      15+       4           14                3
-Compatible with sklearn   |check|   |check|     Partially         |uncheck_|
-Latest release            ?         July 2021   March 2021        June 2022
-========================  ========  ==========  ================  ============
+=======================  =======  =========  ===============  ==========
+Attribute                FairPy   Fairlearn  AI Fairness 360  inFairness
+=======================  =======  =========  ===============  ==========
+Group Fairness           |check|  |check|    |check|          |uncheck_|
+Individual Fairness      |check|  |uncheck_| |check|          |check|
+Minimax Fairness         |check|  |uncheck_| |uncheck_|       |uncheck_|
+Tabular Data             |check|  |check|    |check|          |check|
+Graph Data               |check|  |uncheck_| |uncheck_|       |uncheck_|
+Classification           |check|  |check|    |check|          |check|
+Regression               |check|  |uncheck_| |check|          |uncheck_|
+Ranking                  |check|  |uncheck_| |uncheck_|       |uncheck_|
+Number of Algorithms     10+      4          14               3
+Compatible with sklearn  |check|  |check|    Partially        |uncheck_|
+Latest release           ?        July 2021  March 2021       June 2022
+=======================  =======  =========  ===============  ==========
 
 
-**Sample Code of FairPy**\ :
+Sample Code of FairPy
+====================
 
 
 .. code-block:: python
@@ -62,36 +64,58 @@ Latest release            ?         July 2021   March 2021        June 2022
     model.fit(X, y, s)      # Fit model with provided data
     pred = model.predict(X) # Predict
 
----
+----
+
+
+Implemented Algorithms
+====================
 
 FairPy toolkit consists of three major functional groups:
 
 **(i) Fairness Algorithms** :
 
-====  ===============  ==============  ====  ====
-Type  Name in FairPy   Task            Year  Ref
-====  ===============  ==============  ====  ====
-Pre   reweigh          Any             2021  [1]
-Pre   LabelBias        Classification  2021  [2]
-Pre   LinearFairERM    Any             2021  [3]
-Pre   DIRemover        Any             2021  [4]
-Pre   IFair            Any             2021  [10]
-Pre   InflFair         Classification  2021  [9]
-In    FairCstr         Classification  2021  [5]
-In    FairGLM          Classification  2021  [7]
-In    FairPGRank       Ranking         2021  [12]
-Post  EqOddsCalib      Classification  2021  [6]
-Post  FairRank         Ranking         2021  [11]
-====  ===============  ==============  ====  ====
+====  ==============  ==============  ====  ====
+Type  Name in FairPy  Task            Year  Ref
+====  ==============  ==============  ====  ====
+Pre   reweigh         Any             2021  [1]
+Pre   LabelBias       Classification  2021  [2]
+Pre   LinearFairERM   Any             2021  [3]
+Pre   DIRemover       Any             2021  [4]
+Pre   IFair           Any             2021  [10]
+Pre   InflFair        Classification  2021  [9]
+In    FairCstr        Classification  2021  [5]
+In    FairGLM         Classification  2021  [7]
+In    FairPGRank      Ranking         2021  [12]
+Post  EqOddsCalib     Classification  2021  [6]
+Post  FairRank        Ranking         2021  [11]
+====  ==============  ==============  ====  ====
 
 **(iii) Datasets** :
 
-TODO
+=====  ==============
+Type   Name in FairPy
+=====  ==============
+Table  Adult
+Table  Bank
+Table  Compas
+Table  Credit
+Table  Dutch
+Table  German
+Table  Oulad
+Table  Xing
+=====  ==============
 
 
-**(iii) Utility functions** :
+**(iii) Metrics** :
 
-TODO
+==============  ==============  
+Type            Name in FairPy
+==============  ==============
+Classification  binary_dp
+Classification  binary_eop
+Ranking         xAUC
+Ranking         dcg
+==============  ==============
 
 ----
 
@@ -126,7 +150,6 @@ TODO
    :hidden:
    :caption: API References
 
-   api_cc
    fairpy
 
 .. toctree::
