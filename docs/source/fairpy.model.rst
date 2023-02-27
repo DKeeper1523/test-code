@@ -1,10 +1,10 @@
 Models
 ==========
 
-Reweight
+FairRank
 -----
 
-.. autoclass:: fairpy.model._reweight
+.. autoclass:: fairpy.model.FairRank
     :members:
     :exclude-members:
     :undoc-members:
