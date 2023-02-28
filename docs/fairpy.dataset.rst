@@ -1,5 +1,5 @@
 fairpy.dataset
-======================
+===============
 
 .. currentmodule:: fairpy.dataset
 

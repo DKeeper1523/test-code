@@ -1,5 +1,5 @@
 fairpy.model
-==========
+==============
 
 .. currentmodule:: fairpy.model
 
