@@ -70,8 +70,8 @@ FairPy toolkit consists of three major functional groups:
 ====  ==============  ==============  ====  ====
 Type  Name in FairPy  Task            Year  Ref
 ====  ==============  ==============  ====  ====
-Pre   reweigh         Any             2021  [1]
-Pre   LabelBias       Classification  2021  [2]
+Pre   reweigh         Any             2021  :cite:t:`kamiran2012data`
+Pre   LabelBias       Classification  2021  :cite:p:`jiang2020identifying`
 Pre   LinearFairERM   Any             2021  [3]
 Pre   DIRemover       Any             2021  [4]
 Pre   IFair           Any             2021  [10]
@@ -145,3 +145,4 @@ Ranking         dcg
 
    fairpy.model
    fairpy.dataset
+   reference
