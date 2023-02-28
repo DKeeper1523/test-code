@@ -1,5 +1,5 @@
 .. figure:: fairpy_logo.png
-    :scale: 7%
+    :scale: 6%
     :alt: logo
 
 ----

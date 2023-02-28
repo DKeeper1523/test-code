@@ -1,13 +1,13 @@
 fairpy.dataset
 ===============
 
-.. currentmodule:: fairpy.dataset
+.. currentmodule:: ..fairpy.dataset
 
 .. autosummary::
    :nosignatures:
-   {% for cls in fairpy.dataset.classes %}
+   {% for cls in ..fairpy.dataset.classes %}
      {{ cls }}
    {% endfor %}
 
-.. automodule:: fairpy.dataset
+.. automodule:: ..fairpy.dataset
     :members:
