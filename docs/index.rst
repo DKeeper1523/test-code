@@ -1,4 +1,4 @@
-.. figure:: fairpy_logo.pdf
+.. figure:: fairpy_logo.png
     :scale: 50%
     :alt: logo
 

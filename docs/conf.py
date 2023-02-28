@@ -44,5 +44,5 @@ bibtex_bibfiles = ['ref.bib']
 # # This pattern also affects html_static_path and html_extra_path.
 # exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-html_favicon = 'fairpy_logo.pdf'
-html_logo = 'fairpy_logo.pdf'
+html_favicon = 'fairpy_ico.png'
+html_logo = 'fairpy_ico.png'
