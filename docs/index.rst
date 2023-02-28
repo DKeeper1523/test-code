@@ -1,4 +1,4 @@
-.. figure:: fairpy_logo.png
+.. figure:: fairpy_logo.pdf
     :scale: 50%
     :alt: logo
 
@@ -118,8 +118,14 @@ Ranking         dcg
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: API References
+   :caption: API
 
    fairpy.model
    fairpy.dataset
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Reference
+
    reference
