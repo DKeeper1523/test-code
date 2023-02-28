@@ -1,24 +1,25 @@
 # @Author  : Peizhao Li <peizhaoli05@gmail.com>
 # @License : Apache License 2.0
 
+
 import abc
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
 from scipy.stats import binom
-from numbers import Real, Integral
-from typing import List
+from numbers import Real, Integral, Rational
+from typing import Union, List
 
-from sklearn.utils._param_validation import Interval
+from sklearn.utils.multiclass import type_of_target
 
 from ._base import FairEstimator
+from ..utils._param_validation import Interval
 
 
 def compute_aux_mtable(mtable: pd.DataFrame) -> pd.DataFrame:
     """
     Stores the inverse of an mTable entry and the size of the block with respect to the inverse
     """
-
     if not (isinstance(mtable, pd.DataFrame)):
         raise TypeError("Internal mtable must be a DataFrame")
 
@@ -287,25 +288,15 @@ class MTableGenerator():
 class FairRank(FairEstimator):
     """
     FA*IR: A Fair Top-k Ranking Algorithm
+
     Reference:
         https://dl.acm.org/doi/pdf/10.1145/3132847.3132938
     Code adopted from:
         https://github.com/fair-search/fairsearch-fair-python
-    Attributes
-    ----------
-    s_classes_ : ndarray of shape (n_sensitive_group,)
-        A list of sensitive classes known to LabelBias during training.
-    Examples
-    --------
-    >>> from fairpy.model import FairRank
-    >>> model = FairRank(K=5, P=0.5, alpha=0.10)
-    >>> scores = [0.98, 0.97, 0.85, 0.84, 0.83, 0.55]
-    >>> s = ["male", "male", "male", "female", "female", "female"]
-    >>> fair_rank = model.transform(scores=scores, s=s)
     """
 
     _parameter_constraints = {
-        "K": [Interval(Integral, 10, 400, closed="both")],
+        "K": [Interval(Real, 10, 400, closed="both")],
         "P": [Interval(Real, 0.02, 0.98, closed="both")],
         "alpha": [Interval(Real, 0.01, 0.15, closed="both")],
     }
@@ -315,44 +306,33 @@ class FairRank(FairEstimator):
         Parameters
         ----------
         K : int
-            Number of Top-K elements returned, should be in range [10, 400].
+            Number of Top-K elements returned
+
         P : float
-            Proportion of sensitive attributes in the Top-K elements, should be in range [0.02, 0.98].
+            Proportion of sensitive attributes in the Top-K elements
+
         alpha : float
-            Significance level, should be in range [0.01, 0.15].
+            Significance level
         """
 
         self.K = K
         self.P = P
         self.alpha = alpha
 
-    def _create_mtable(self, alpha: float, adjust_alpha: bool) -> List:
+    def _create_mtable(self, alpha, adjust_alpha) -> List:
         fc = MTableGenerator(self.K, self.P, alpha, adjust_alpha)
         return fc.mtable_as_list()
 
     def transform(self, scores: npt.ArrayLike, s: npt.ArrayLike) -> List[int]:
-        """
-        Transform the ranking to be fair based on scores.
-        Parameters
-        ----------
-        scores : array-like of shape (n_samples,)
-            Scores for ranking samples, where `n_samples` is the number of samples.
-        s : array-like of shape (n_samples,)
-            Sensitive attributes relative to scores.
-        Returns
-        -------
-        rank : array-like of shape (n_samples,)
-            Fair rank with indexes corresponding to scores.
-        """
-
         self._validate_params()
-        scores, s = self._validate_data(scores, s)
-        s = self._validate_grp_s(s)
 
         mtable = self._create_mtable(self.alpha, True)
 
-        protected_idx_list = np.where(s == 0)[0]
-        non_protected_idx_list = np.where(s == 1)[0]
+        # TODO; verify score and s have the same size and at least one
+
+        s_ind = self._validate_grp_s(s, ("binary"))
+        protected_idx_list = np.where(s_ind == 0)[0]
+        non_protected_idx_list = np.where(s_ind == 1)[0]
         N_protected = len(protected_idx_list)
         N_non_protected = len(non_protected_idx_list)
 
@@ -388,9 +368,3 @@ class FairRank(FairEstimator):
                     idx_non_protected += 1
 
         return res
-
-    def _more_tags(self):
-        return {
-            'requires_s': True,
-            "s_types": ["binary"],
-        }
