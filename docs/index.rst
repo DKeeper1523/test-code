@@ -85,7 +85,7 @@ Post  EqOddsCalib     Classification  2021  [6]
 Post  FairRank        Ranking         2021  [11]
 ====  ==============  ==============  ====  ====
 
-**(iii) Datasets** :
+**(ii) Datasets** :
 
 =====  ==============
 Type   Name in FairPy
